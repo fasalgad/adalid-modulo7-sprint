@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      
+      {{#unless estado}}
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link" aria-current="page" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/galeria">Galeria</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lenguajes">Lenguajes de programación</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/colores">Colores</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contacto">Contacto</a>
+          </li>
+      
+
+          {{!-- <li class="nav-item">
+            <a class="nav-link" href="/echo/Hello">Echo:Hello</a>
+          </li> --}}
+
+        </ul>
+      {{/unless}}
+      
+      {{#unless estado}}
+        <form class="d-flex" role="login" action="http://localhost:3000/login">
+          <input class="form-control me-2" name="usuario" placeholder="Usuario" aria-label="Usuario">
+          <input class="form-control me-2" name="password" placeholder="Password" aria-label="Password">
+          <button class="btn btn-outline-success" type="submit">Ingresar</button>
+        </form>
+      {{/unless}}
+      <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+
+        <li class="nav-item col-6 col-lg-auto">
+          <a class="nav-link py-2 px-0 px-lg-2" href="/" rel="noopener">
+            <img width="45" src="/img/cerrar-sesion.png" alt="Login">
+          </a>
+        </li>
+
+        <ul class="navbar-nav flex-row flex-wrap ms-md-auto">
+          <li class="nav-item col-6 col-lg-auto">
+            <a class="nav-link py-2 px-0 px-lg-2" href="/tienda" rel="noopener">
+              <img id="ecomerce" width="45" src="/img/carrito-de-compras.png" alt="Login">
+            </a>
+          </li>
+
+        </ul>
+    </div>
+  </div>
+</nav>
