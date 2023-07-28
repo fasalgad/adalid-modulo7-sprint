@@ -1,8 +1,18 @@
-import { Sequelize } from "sequelize"
+import dotenv from 'dotenv';
+import { Sequelize } from 'sequelize';
+import { env } from 'process';
 
-const db = new Sequelize('bancosolar','postgres','Fabian_14',{
-    host:'localhost',
-    dialect:'postgres'
-})
+dotenv.config();
+
+const db = new Sequelize(
+	env.POSTGRES_DB,
+	env.POSTGRES_USER,
+	env.POSTGRES_PASSWORD,
+	{
+		host: env.POSTGRES_HOST,
+		dialect: 'postgres',
+		logging: false,
+	}
+);
 
 export default db;

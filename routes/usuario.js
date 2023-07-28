@@ -1,28 +1,18 @@
-import express from "express";
+import { Router } from 'express';
 import {
-    getUsuarios ,
-    postUsuario,
-    getUsuario,
-    putUsuario,
-    deleteUsuario
+	getUsuarios,
+	postUsuario,
+	getUsuario,
+	putUsuario,
+	deleteUsuario,
+} from '../controller/usuario.js';
 
-} from '../controller/usuario.js'
-const router = express.Router();
-// Router()
-/*
+const router = Router();
 
-    GET
-    POST
-    PUT
-    DELETE
-
-*/
-
-// La raiz '/' es igual a decir ---> '/api/usuario/'
-router.get( '/', getUsuarios );
-router.get( '/:id', getUsuario );
-router.post( '/', postUsuario );
-router.put( '/:id', putUsuario );
-router.delete( '/:id', deleteUsuario );
+router.get('/', getUsuarios);
+router.get('/:id', getUsuario);
+router.post('/', postUsuario);
+router.put('/:id', putUsuario);
+router.delete('/:id', deleteUsuario);
 
 export default router;
